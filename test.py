@@ -10,4 +10,10 @@ layout = [
 
 window = Window("Hello world", layout)
 
+while window.is_running():
+    window.loop()
+    if not window.get_event() is None:
+        print(window.get_event())
+
+
 window.close()

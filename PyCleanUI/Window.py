@@ -10,8 +10,8 @@ class Window:
         self.title = title
         self.layout = layout
         self.widgets = []
+        self.running = True
         self.pgInit() # -> class method
-        self.loop()
 
     """ pygame initialisation stuff """
     def pgInit(self):
@@ -29,20 +29,21 @@ class Window:
 
     """ every tick"""
     def loop(self):
-        self.done = False
-        while not self.done:
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    self.done = True
+        self.event = None
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                self.running = False
+            elif event.type in [pygame.MOUSEMOTION, pygame.MOUSEBUTTONDOWN, pygame.MOUSEBUTTONUP]:
+                PyCleanUI.EventHandler.test_change(self, event)#
+            elif event.type == pygame.USEREVENT:
+                self.event = event
 
-                elif event.type == pygame.USEREVENT:
-                    print(event)
-                elif event.type in [pygame.MOUSEMOTION, pygame.MOUSEBUTTONDOWN, pygame.MOUSEBUTTONUP]:
-                    PyCleanUI.EventHandler.test_change(self, event)
+    def is_running(self):
+        return self.running
 
     """ stuff to add later """
-    def read(self):
-        return None
+    def get_event(self):
+        return PyCleanUI.EventHandler.get_source(self, self.event)
 
     def close(self):
         pygame.quit()
