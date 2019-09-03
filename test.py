@@ -1,13 +1,15 @@
-import pygame as pg
+import pygame
 from PyCleanUI.Window import Window
 from PyCleanUI.Widgets.Text import Text
 from PyCleanUI.Widgets.Button import Button
 
 layout = [
-    Text("asdasdasd"),
+    Text("Search Folder:"),
     [Text("'C:/Desktop'"), Button("Browse")],
-    Text("help")
+    Text("help"),
+    Button("Browse2")
 ]
 
 window = Window("Hello world", layout)
+
 window.close()
