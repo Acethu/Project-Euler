@@ -11,4 +11,3 @@ layout = [
 
 window = Window("Hello world", layout)
 window.close()
-asd
