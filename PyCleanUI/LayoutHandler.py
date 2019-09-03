@@ -8,6 +8,8 @@ def setup_render(window):
     nx = padding
     ny = padding
 
+    greatest_nx = 0
+
     for item in window.layout:
         if isinstance(item, list): # case: list of widgets
             for widget in item:
@@ -23,6 +25,9 @@ def setup_render(window):
                 if height < greatest_height:
                     widget.setup_render(window, (widget.position[0], ny + (greatest_height-height)/2))
 
+            if nx > greatest_nx:
+                greatest_nx = nx
+
             nx = padding
             ny += greatest_height + padding # chose the one with the highest height
 
@@ -31,6 +36,11 @@ def setup_render(window):
             item.setup_render(window, (nx, ny))
             window.widgets.append(item)
             ny += item.get_size()[1] + padding # height # mind fuck stuff - please dont touch
+
+            if item.get_size()[0] > greatest_nx:
+                greatest_nx = item.get_size()[0] + padding*2
+
+    pygame.display.set_mode((greatest_nx, ny))
 
 """ render layout of a Window"""
 def render(window):

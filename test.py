@@ -5,9 +5,7 @@ from PyCleanUI.Widgets.Button import Button
 
 layout = [
     Text("Search Folder:"),
-    [Text("'C:/Desktop'"), Button("Browse")],
-    Text("help"),
-    Button("Browse2")
+    [Text("'C:/Desktop'"), Button("Browse")]
 ]
 
 window = Window("Hello world", layout)

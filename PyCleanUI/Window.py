@@ -15,6 +15,7 @@ class Window:
 
     """ pygame initialisation stuff """
     def pgInit(self):
+        pygame.init()
         self.display = pygame.display.set_mode((500, 300)) # window
         pygame.display.set_caption(self.title) # title
 
@@ -33,10 +34,10 @@ class Window:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.done = True
-                    self.close()
-                if event.type == pygame.USEREVENT:
+
+                elif event.type == pygame.USEREVENT:
                     print(event)
-                if event.type in [pygame.MOUSEMOTION, pygame.MOUSEBUTTONDOWN, pygame.MOUSEBUTTONUP]:
+                elif event.type in [pygame.MOUSEMOTION, pygame.MOUSEBUTTONDOWN, pygame.MOUSEBUTTONUP]:
                     PyCleanUI.EventHandler.test_change(self, event)
 
     """ stuff to add later """
