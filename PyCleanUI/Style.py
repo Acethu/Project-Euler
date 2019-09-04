@@ -75,9 +75,32 @@ STYLE = {
             "          XXXXX         ",
 
         ),
-        "text": (
-
-        )
+        "text": ( #sized 8x24
+            "ooo  ooo",
+            "  oooo  ",
+            "   oo   ",
+            "   oo   ",
+            "   oo   ",
+            "   oo   ",
+            "   oo   ",
+            "   oo   ",
+            "   oo   ",
+            "   oo   ",
+            "   oo   ",
+            "   oo   ",
+            "   oo   ",
+            "   oo   ",
+            "   oo   ",
+            "   oo   ",
+            "   oo   ",
+            "   oo   ",
+            "  oooo  ",
+            "ooo  ooo",
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+    ),
     },
     "padding": 10
 }
