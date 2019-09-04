@@ -2,6 +2,7 @@ import pygame
 from PyCleanUI.Style import STYLE
 import PyCleanUI.LayoutHandler
 import PyCleanUI.EventHandler
+import time
 
 class Window:
 
@@ -41,9 +42,10 @@ class Window:
     def is_running(self):
         return self.running
 
-    """ stuff to add later """
+    """ get current window event - can be NoneType Object """
     def get_event(self):
         return PyCleanUI.EventHandler.get_source(self, self.event)
 
+    """ close the window - uninitialize pygame """
     def close(self):
         pygame.quit()

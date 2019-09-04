@@ -5,15 +5,15 @@ from PyCleanUI.Widgets.Button import Button
 
 layout = [
     Text("Search Folder:"),
-    [Text("'C:/Desktop'"), Button("Browse")]
+    [Text("'C:/Desktop'"), Button("Browse")],
+    Button("Browse")
 ]
 
 window = Window("Hello world", layout)
 
 while window.is_running():
     window.loop()
-    if not window.get_event() is None:
+    if window.get_event() is not None:
         print(window.get_event())
-
 
 window.close()
