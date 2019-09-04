@@ -10,8 +10,11 @@ def test_change(window, event):
         index += 1
         """ Button """
         if type(widget) == PyCleanUI.Widgets.Button.Button: # if widget is a button
-            """ Mouse Over """
+            # mouse over
             if widget.get_rect().collidepoint(pygame.mouse.get_pos()):
+                curs, mask = pygame.cursors.compile(STYLE["cursors"]["button"], 'X', '.')
+                pygame.mouse.set_cursor((24, 24), (6, 0), curs, mask)
+
                 if event.type == pygame.MOUSEBUTTONDOWN: # if down
                     if event.button == 1:
                         widget.set_state(state="click")
@@ -24,7 +27,10 @@ def test_change(window, event):
                 widget.render()
                 pygame.display.flip()
                 break # change found, so no need to check for other changes
+            # mouse not over
             else:
+                curs, mask = pygame.cursors.compile(STYLE["cursors"]["normal"], 'X', '.')
+                pygame.mouse.set_cursor((24, 32), (0, 0), curs, mask)
                 if widget.state == "hover" or widget.state == "click": # on mouse leave
                     widget.set_state(state="normal")
                     widget.render()
