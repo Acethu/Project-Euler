@@ -36,3 +36,6 @@ class Button:
 
     def get_render(self):
         return self.pg_text
+
+    def get_state(self):
+        return self.state

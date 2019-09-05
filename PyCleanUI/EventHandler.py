@@ -19,7 +19,7 @@ def test_change(window, event):
                     if event.button == 1:
                         widget.set_state(state="click")
                 elif event.type == pygame.MOUSEBUTTONUP: # if click
-                    if event.button == 1:
+                    if event.button == 1 and widget.get_state() == "click":
                         widget.set_state(state="hover")
                         pygame.event.post(pygame.event.Event(pygame.locals.USEREVENT,custom_type=index))
                 elif widget.state == "normal": # on mouse enter
