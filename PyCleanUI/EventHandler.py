@@ -29,8 +29,8 @@ def test_change(window, event):
                 break # change found, so no need to check for other changes
             # mouse not over
             else:
-                PyCleanUI.Cursors.set_cursor("normal")
                 if widget.state == "hover" or widget.state == "click": # on mouse leave
+                    PyCleanUI.Cursors.set_cursor("normal")
                     widget.set_state(state="normal")
                     widget.render()
                     pygame.display.flip()

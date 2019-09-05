@@ -2,6 +2,7 @@ import pygame
 from PyCleanUI.Style import STYLE
 import PyCleanUI.LayoutHandler
 import PyCleanUI.EventHandler
+import PyCleanUI.Cursors
 import time
 
 class Window:
@@ -22,6 +23,7 @@ class Window:
 
         pygame.font.init() # allow font usage
         self.font = pygame.font.SysFont(STYLE["font"]["type"], STYLE["font"]["size"])
+        PyCleanUI.Cursors.set_cursor("normal")
 
         PyCleanUI.LayoutHandler.setup_render(self) # setup the layout
         self.display.fill(STYLE["background"]["color"]) # background color
