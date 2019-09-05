@@ -75,7 +75,7 @@ STYLE = {
             "          XXXXX         ",
 
         ),
-        "text": ( #sized 8x24
+        "input": ( #sized 8x24
             "ooo  ooo",
             "  oooo  ",
             "   oo   ",
