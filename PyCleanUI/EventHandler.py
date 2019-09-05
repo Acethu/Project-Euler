@@ -48,9 +48,3 @@ def test_change(window, event):
 def get_source(window, event):
     if event != None:
         return {"name": window.widgets[event.custom_type-1].text, "index": event.custom_type}
-
-""" """
-def has_event(event):
-    if event == None:
-        return False
-    return True
