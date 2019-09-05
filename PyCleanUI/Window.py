@@ -3,7 +3,7 @@ from PyCleanUI.Style import STYLE
 import PyCleanUI.LayoutHandler
 import PyCleanUI.EventHandler
 import PyCleanUI.Cursors
-import time
+import sys
 
 class Window:
 
@@ -50,4 +50,6 @@ class Window:
 
     """ close the window - uninitialize pygame """
     def close(self):
+        pygame.display.quit()
         pygame.quit()
+        sys.exit()
