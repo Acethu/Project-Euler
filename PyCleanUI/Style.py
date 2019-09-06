@@ -1,7 +1,7 @@
 STYLE = {
     "font": {
-        "type": "Segoe UI Regular",
-        "size": 32,
+        "file": "PyCleanUI\Assets\Roboto-Bold.ttf",
+        "size": 24,
         "color": [200, 200, 200],
     },
     "background": {

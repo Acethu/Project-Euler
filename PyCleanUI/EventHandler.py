@@ -2,7 +2,7 @@ import pygame
 import pygame.locals
 import PyCleanUI
 from PyCleanUI.Style import STYLE
-import PyCleanUI.Cursors
+import PyCleanUI.Assets.Cursors
 
 """ test for visual changes to be made due to an event """
 def test_change(window, event):
@@ -13,7 +13,7 @@ def test_change(window, event):
         if type(widget) == PyCleanUI.Widgets.Button.Button: # if widget is a button
             # mouse over
             if widget.get_rect().collidepoint(pygame.mouse.get_pos()):
-                PyCleanUI.Cursors.set_cursor("button")
+                PyCleanUI.Assets.Cursors.set_cursor("button")
 
                 if event.type == pygame.MOUSEBUTTONDOWN: # if down
                     if event.button == 1:
@@ -30,7 +30,7 @@ def test_change(window, event):
             # mouse not over
             else:
                 if widget.state == "hover" or widget.state == "click": # on mouse leave
-                    PyCleanUI.Cursors.set_cursor("normal")
+                    PyCleanUI.Assets.Cursors.set_cursor("normal")
                     widget.set_state(state="normal")
                     widget.render()
                     pygame.display.flip()
