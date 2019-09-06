@@ -62,7 +62,12 @@ def test_change(window, event):
                 break
             # mouse not over
             else:
-                if PyCleanUI.Assets.Cursors.get_cursor() == "input":
+                should_change = True
+                for w in window.widgets:
+                    if type(w) == PyCleanUI.Widgets.Input.Input:
+                        if w.get_rect().collidepoint(pygame.mouse.get_pos()):
+                            should_change = False
+                if PyCleanUI.Assets.Cursors.get_cursor() == "input" and should_change:
                     PyCleanUI.Assets.Cursors.set_cursor("normal")
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     widget.set_state(state="inactive")
