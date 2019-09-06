@@ -55,7 +55,7 @@ def test_change(window, event):
 
             if widget.get_rect().collidepoint(pygame.mouse.get_pos()): # mouse over
                 PyCleanUI.Assets.Cursors.set_cursor("input")
-                if event.type == pygame.MOUSEBUTTONDOWN:
+                if event.type == pygame.MOUSEBUTTONDOWN or event.type == pygame.KEYDOWN:
                     widget.set_state("active")
                     widget.render()
                     pygame.display.flip()
