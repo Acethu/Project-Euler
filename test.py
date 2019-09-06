@@ -1,8 +1,8 @@
 import pygame
 from PyCleanUI.Window import Window
-from PyCleanUI.Widgets.Text import Text
-from PyCleanUI.Widgets.Button import Button
-from PyCleanUI.Widgets.Input import Input
+from PyCleanUI.widgets.Text import Text
+from PyCleanUI.widgets.Button import Button
+from PyCleanUI.widgets.Input import Input
 layout = [
     Text("Fill in these boxes"),
     [Text("Name: "), Input("")],
