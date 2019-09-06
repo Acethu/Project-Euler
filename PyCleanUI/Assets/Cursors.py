@@ -10,6 +10,7 @@ button = pygame.cursors.compile(STYLE["cursors"]["button"], 'X', '.', 'o')
 
 text = pygame.cursors.compile(STYLE["cursors"]["input"], 'X', '.', 'o')
 
+# set pygame cursor by name -> STYLE
 def set_cursor(name):
     if name == "normal":
         pygame.mouse.set_cursor((24, 32), (0, 0), *normal)
@@ -18,5 +19,11 @@ def set_cursor(name):
     elif name == "input":
         pygame.mouse.set_cursor((8, 24), (4, 12), *text)
 
+# returns cursor name of current pygame cursor
 def get_cursor():
-        return self.name
+    if pygame.mouse.get_cursor() == ((24, 32), (0, 0), *normal):
+        return "normal"
+    elif pygame.mouse.get_cursor() == ((24, 24), (6, 0), *button):
+        return "button"
+    elif pygame.mouse.get_cursor()[2] == text[0]:
+        return "input"
