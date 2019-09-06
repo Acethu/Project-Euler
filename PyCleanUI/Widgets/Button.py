@@ -5,6 +5,7 @@ class Button:
     def __init__(self, text=""):
         self.text = text
         self.state = "normal"
+        
     """ prerender pygame surface """
     def setup_render(self, window, position):
         self.window = window
@@ -18,24 +19,26 @@ class Button:
     """ render """
     def render(self):
         pygame.draw.rect(self.window.display, STYLE["button"][self.state], self.pg_rect)
-        self.window.display.blit(self.get_render(), self.text_pos)
+        self.window.display.blit(self.pg_text, self.text_pos)
 
-    """ getters & setters """
+    """ setters """
+    # set font
     def set_font(self, font):
         self.font = font
 
+    # set state -> normal / hover / click
     def set_state(self, state):
         self.state = state
 
-    def get_size(self):
-        #return self.pg_text.get_size()
-        return (self.pg_text.get_width() + STYLE["padding"]*2, self.pg_text.get_height() + STYLE["padding"]*2)
-
+    """ getters """
+    # return pg_rect
     def get_rect(self):
         return self.pg_rect
 
-    def get_render(self):
-        return self.pg_text
-
+    # return state -> normal / hover / click
     def get_state(self):
         return self.state
+
+    # return widget px size
+    def get_size(self):
+        return (self.pg_text.get_width() + STYLE["padding"]*2, self.pg_text.get_height() + STYLE["padding"]*2)
