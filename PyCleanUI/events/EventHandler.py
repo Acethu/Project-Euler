@@ -87,6 +87,6 @@ def get_values(window):
         index += 1
         if type(widget) == PyCleanUI.widgets.Input.Input:
             values.append(
-                {"index": index, "values":widget.get_text()}
+                {"index": index, "value":widget.get_text()}
             )
     return values

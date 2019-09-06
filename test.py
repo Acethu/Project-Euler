@@ -5,9 +5,9 @@ from PyCleanUI.widgets.Button import Button
 from PyCleanUI.widgets.Input import Input
 layout = [
     Text("Fill in these boxes"),
-    Text("Name"),
+    Text("Name:"),
     Input("", width=400),
-    Text("Email"),
+    Text("Email:"),
     Input("", width=400),
     Button("Done"),
 ]
