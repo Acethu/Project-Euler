@@ -4,8 +4,10 @@ from PyCleanUI.Widgets.Text import Text
 from PyCleanUI.Widgets.Button import Button
 from PyCleanUI.Widgets.Input import Input
 layout = [
-    Text("Search Folder:"),
-    [Input("'C:/Desktop'"), Button("Browse")],
+    Text("Fill in these boxes"),
+    [Text("Name: "), Input("")],
+    [Text("Password: "), Input("")],
+    Button("Done"),
 ]
 
 window = Window("Hello world", layout)
