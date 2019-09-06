@@ -2,8 +2,9 @@ import pygame
 from PyCleanUI.Style import STYLE
 
 class Input:
-    def __init__(self, text=""):
+    def __init__(self, text="", width=STYLE["input"]["width"]):
         self.text = text
+        self.width = width
         self.state = "inactive"
 
     """ prerender pygame surface """
@@ -49,7 +50,7 @@ class Input:
 
     # return widget pixel size
     def get_size(self):
-        return (STYLE["input"]["width"] + STYLE["padding"]*2, self.font.get_height() + STYLE["padding"]*2)
+        return (self.width + STYLE["padding"]*2, self.font.get_height() + STYLE["padding"]*2)
 
     # return text
     def get_text(self):
