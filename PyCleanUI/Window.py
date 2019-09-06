@@ -41,7 +41,7 @@ class Window:
                 #PyCleanUI.events.EventHandler.test_change(self, event)
             elif event.type == pygame.USEREVENT:
                 self.event = event
-            PyCleanUI.events.EventHandler.test_change(self, event)
+            PyCleanUI.events.EventHandler.handle_event(self, event)
 
     def is_running(self):
         return self.running
