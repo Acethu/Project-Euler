@@ -37,10 +37,11 @@ class Window:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.running = False
-            elif event.type in [pygame.MOUSEMOTION, pygame.MOUSEBUTTONDOWN, pygame.MOUSEBUTTONUP]:
-                PyCleanUI.EventHandler.test_change(self, event)#
+            #elif event.type in [pygame.MOUSEMOTION, pygame.MOUSEBUTTONDOWN, pygame.MOUSEBUTTONUP]:
+                #PyCleanUI.EventHandler.test_change(self, event)
             elif event.type == pygame.USEREVENT:
                 self.event = event
+            PyCleanUI.EventHandler.test_change(self, event)
 
     def is_running(self):
         return self.running
@@ -49,6 +50,8 @@ class Window:
     def get_event(self):
         return PyCleanUI.EventHandler.get_source(self, self.event)
 
+    def get_values(self):
+        return PyCleanUI.EventHandler.get_values()
     """ close the window - uninitialize pygame """
     def close(self):
         pygame.display.quit()
