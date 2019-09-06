@@ -29,7 +29,6 @@ def test_change(window, event):
                     widget.set_state(state="hover")
                 widget.render()
                 pygame.display.flip()
-                break # change found, so no need to check for other changes
             # mouse not over
             else:
                 if widget.state == "hover" or widget.state == "click": # on mouse leave
@@ -37,11 +36,6 @@ def test_change(window, event):
                     widget.set_state(state="normal")
                     widget.render()
                     pygame.display.flip()
-                    break # change found, so no need to check for other changes
-                else:
-                    continue
-                break
-            break
         # input
         elif type(widget) == PyCleanUI.widgets.Input.Input: # if widget is a input
             if widget.get_state() == "active":
@@ -77,11 +71,7 @@ def test_change(window, event):
                     widget.set_state(state="inactive")
                     widget.render()
                     pygame.display.flip()
-                continue
-            break
-        else:
-            continue
-        break
+
 
 """ get source of custom event """
 def get_source(window, event):

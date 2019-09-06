@@ -1,7 +1,7 @@
 import pygame
 from PyCleanUI.Style import STYLE
 import PyCleanUI.LayoutHandler
-import PyCleanUI.EventHandler
+import PyCleanUI.events.EventHandler
 import PyCleanUI.assets.Cursors
 import sys
 
@@ -38,20 +38,20 @@ class Window:
             if event.type == pygame.QUIT:
                 self.running = False
             #elif event.type in [pygame.MOUSEMOTION, pygame.MOUSEBUTTONDOWN, pygame.MOUSEBUTTONUP]:
-                #PyCleanUI.EventHandler.test_change(self, event)
+                #PyCleanUI.events.EventHandler.test_change(self, event)
             elif event.type == pygame.USEREVENT:
                 self.event = event
-            PyCleanUI.EventHandler.test_change(self, event)
+            PyCleanUI.events.EventHandler.test_change(self, event)
 
     def is_running(self):
         return self.running
 
     """ get current window event - can be NoneType Object """
     def get_event(self):
-        return PyCleanUI.EventHandler.get_source(self, self.event)
+        return PyCleanUI.events.EventHandler.get_source(self, self.event)
 
     def get_values(self):
-        return PyCleanUI.EventHandler.get_values(self)
+        return PyCleanUI.events.EventHandler.get_values(self)
 
     """ close the window - uninitialize pygame """
     def close(self):
