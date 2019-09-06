@@ -12,7 +12,7 @@ def test_change(window, event):
     index = 0
     for widget in window.widgets:
         index += 1
-        """ Button """
+        # button
         if type(widget) == PyCleanUI.Widgets.Button.Button: # if widget is a button
             # mouse over
             if widget.get_rect().collidepoint(pygame.mouse.get_pos()):
@@ -42,7 +42,17 @@ def test_change(window, event):
                     continue
                 break
             break
+        # input
         elif type(widget) == PyCleanUI.Widgets.Input.Input: # if widget is a input
+            if widget.get_state() == "active":
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_BACKSPACE:
+                        widget.set_text(widget.get_text()[:-1]) # remove last of widget.text
+                    else:
+                        widget.set_text(widget.get_text() + event.unicode) # add key to widget.text
+                    widget.render()
+                    pygame.display.flip()
+
             if widget.get_rect().collidepoint(pygame.mouse.get_pos()): # mouse over
                 PyCleanUI.Assets.Cursors.set_cursor("input")
                 if event.type == pygame.MOUSEBUTTONDOWN:
@@ -64,9 +74,17 @@ def test_change(window, event):
             continue
         break
 
-
-
 """ get source of custom event """
 def get_source(window, event):
     if event != None:
         return {"name": window.widgets[event.custom_type-1].text, "index": event.custom_type}
+
+""" get values """
+def get_values(window):
+    values = []
+    index = 0
+
+    for widget in window.widgets:
+        index += 1
+        if type(widget) == PyCleanUI.Widgets.Input.Input:
+            None
