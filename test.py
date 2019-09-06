@@ -1,4 +1,3 @@
-import pygame
 from PyCleanUI.Window import Window
 from PyCleanUI.widgets.Text import Text
 from PyCleanUI.widgets.Button import Button
@@ -6,16 +5,18 @@ from PyCleanUI.widgets.Input import Input
 layout = [
     Text("Fill in these boxes"),
     Text("Name:"),
-    Input("", width=400),
+    Input("", width=600),
     Text("Email:"),
-    Input("", width=400),
+    Input("", width=600),
+    Text("Password:"),
+    Input("", width=600),
     Button("Done"),
 ]
 
-window = Window("Hello world", layout)
+window = Window("Fill in the boxes", layout)
 
 while window.is_running():
-    window.loop()
+    window.update()
     if window.get_event() is not None:
         print(window.get_event(), window.get_values())
 

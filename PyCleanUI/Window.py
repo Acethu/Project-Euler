@@ -32,7 +32,7 @@ class Window:
         pygame.display.flip() # update window
 
     """ every tick"""
-    def loop(self):
+    def update(self):
         self.event = None
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
