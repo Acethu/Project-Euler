@@ -16,14 +16,16 @@ class Text:
     def render(self):
         self.window.display.blit(self.get_render(), self.position)
 
-    """ set widget font """
+    """ setters """
+    # set font
     def set_font(self, font):
         self.font = font
 
-    """ return geometry"""
+    """ getters """
+    # return widget px size
     def get_size(self):
         return self.pg_text.get_size()
 
-    """ return render -> pygame surface"""
+    # return render -> pygame surface
     def get_render(self):
         return self.pg_text

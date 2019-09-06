@@ -1,8 +1,11 @@
 import pygame
 import pygame.locals
-import PyCleanUI
+
 from PyCleanUI.Style import STYLE
 import PyCleanUI.Assets.Cursors
+
+import PyCleanUI.Widgets.Button
+import PyCleanUI.Widgets.Input
 
 """ test for visual changes to be made due to an event """
 def test_change(window, event):
@@ -39,9 +42,27 @@ def test_change(window, event):
                     continue
                 break
             break
+        elif type(widget) == PyCleanUI.Widgets.Input.Input: # if widget is a input
+            if widget.get_rect().collidepoint(pygame.mouse.get_pos()): # mouse over
+                PyCleanUI.Assets.Cursors.set_cursor("input")
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    widget.set_state("active")
+                    widget.render()
+                    pygame.display.flip()
+                break
+            # mouse not over
+            else:
+                PyCleanUI.Assets.Cursors.set_cursor("normal")
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    widget.set_state(state="inactive")
+                    widget.render()
+                    pygame.display.flip()
+                continue
+            break
         else:
             continue
         break
+
 
 
 """ get source of custom event """

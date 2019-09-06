@@ -2,11 +2,11 @@ import pygame
 from PyCleanUI.Window import Window
 from PyCleanUI.Widgets.Text import Text
 from PyCleanUI.Widgets.Button import Button
-
+from PyCleanUI.Widgets.Input import Input
 layout = [
     Text("Search Folder:"),
-    [Text("'C:/Desktop'"), Button("Browse")],
-    Button("Browse")
+    Button("test"),
+    [Input("'C:/Desktop'"), Button("Browse")],
 ]
 
 window = Window("Hello world", layout)

@@ -23,6 +23,7 @@ class Window:
 
         pygame.font.init() # allow font usage
         self.font = pygame.font.Font(STYLE["font"]["file"], STYLE["font"]["size"])
+
         PyCleanUI.Assets.Cursors.set_cursor("normal")
 
         PyCleanUI.LayoutHandler.setup_render(self) # setup the layout

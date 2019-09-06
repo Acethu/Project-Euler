@@ -11,7 +11,11 @@ STYLE = {
         "normal": [100, 100, 100],
         "hover": [80, 80, 80],
         "click": [60, 60, 60],
-        "disabled": [80, 80, 80],
+    },
+    "input": {
+        "width": 200,
+        "active": [65, 65, 65],
+        "inactive": [60, 60, 60],
     },
     "cursors": {
         "normal": ( # size 24x32
