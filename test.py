@@ -13,6 +13,6 @@ window = Window("Hello world", layout)
 while window.is_running():
     window.loop()
     if window.get_event() is not None:
-        print(window.get_event())
+        print(window.get_event(), window.get_values())
 
 window.close()

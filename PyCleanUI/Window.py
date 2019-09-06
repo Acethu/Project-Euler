@@ -51,7 +51,8 @@ class Window:
         return PyCleanUI.EventHandler.get_source(self, self.event)
 
     def get_values(self):
-        return PyCleanUI.EventHandler.get_values()
+        return PyCleanUI.EventHandler.get_values(self)
+
     """ close the window - uninitialize pygame """
     def close(self):
         pygame.display.quit()

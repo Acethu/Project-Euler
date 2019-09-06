@@ -77,7 +77,7 @@ def test_change(window, event):
 """ get source of custom event """
 def get_source(window, event):
     if event != None:
-        return {"name": window.widgets[event.custom_type-1].text, "index": event.custom_type}
+        return {"index": event.custom_type, "name": window.widgets[event.custom_type-1].text}
 
 """ get values """
 def get_values(window):
@@ -87,4 +87,7 @@ def get_values(window):
     for widget in window.widgets:
         index += 1
         if type(widget) == PyCleanUI.Widgets.Input.Input:
-            None
+            values.append(
+                {"index": index, "values":widget.get_text()}
+            )
+    return values
