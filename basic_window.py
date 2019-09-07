@@ -20,5 +20,6 @@ while window.is_running():
     if window.get_event() is not None: # on event
         print("event:", window.get_event()) # returns the button, that has been pressed
         print("values:", window.get_values()) # returns values of the inputs
+        window.close()
 
 window.close() # closes the window properly
