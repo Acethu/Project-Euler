@@ -43,11 +43,12 @@ window.close() # always close the window properly
 ![alt text](https://i.pinimg.com/originals/3e/f3/04/3ef304635f521b582b6def9ae05b3e3a.png)
 ![alt text](https://i.pinimg.com/originals/73/03/6a/73036a5e793bca42bc894c9c4a7d749b.png)
 
-Now everytime you press the 'Done' button, the console should log something like this:
+Now, when you press the 'Done' button, the window should close and the console should log something like this:
 ``` python
 event: {'index': 6, 'name': 'Done'}
 values: [{'index': 3, 'value': 'my_name'}, {'index': 5, 'value': 'my@mail.com'}]
 ```
+
 ***'index'*** - describes the widgets index in the windows layout
 
 ***'name'*** - is the text of the button
@@ -55,7 +56,7 @@ values: [{'index': 3, 'value': 'my_name'}, {'index': 5, 'value': 'my@mail.com'}]
 ***'values'*** - returns a list of dictionaries with an *'index'* and the *'value'* of an input
 
 With this information you should now be able to create your own simple UI applications.
-For now there are no more widgets than these 3 ( Text(), Button() & Input() ), but I will add more in the future.
+You can find a copy of the *basic_window.py* file in this repository.
 
 <a name="core"></a>
 ## 2. Core Principles
