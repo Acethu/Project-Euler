@@ -55,6 +55,7 @@ class Window:
 
     """ close the window - uninitialize pygame """
     def close(self):
+        self.is_running = False
         pygame.display.quit()
         pygame.quit()
         sys.exit()
