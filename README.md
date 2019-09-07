@@ -62,11 +62,10 @@ For now there are no more widgets than these 3 ( Text(), Button() & Input() ), b
 
 An event in PyCleanUI is e.g. when a button gets clicked.
 
-with
+You can get the current event with:
 ``` python
 window.get_event()
 ```
-you can get the current event.
 
 If you were to print out that event, it would look somewhat like this:
 ```python
