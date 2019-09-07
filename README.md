@@ -70,7 +70,7 @@ window.get_event()
 If you were to print out that event, it would look somewhat like this:
 ```python
 print(window.get_event())
->> {'index': 1, 'name': 'Testbutton'}
+>>> {'index': 1, 'name': 'Testbutton'}
 ```
 
 Note that *window.get_event()* can return also *None*. So to only get actual events you can do:
@@ -80,6 +80,30 @@ if window.get_event() is not None:
 ```
 
 ### 2. Values
+A value in PyCleanUI is e.g. the value (text) of an input.
+
+You can get a list of all values of a window with:
+``` python
+window.get_values()
+```
+
+*window.get_values()* would return something like this, if you were to print it out:
+```python
+print(window.get_values())
+>>> [{'index': 1, 'value': 'my_name'}, {'index': 2, 'value': 'my@mail.com'}]
+```
+
+***'index'*** - describes the inputs index in the windows layout
+
+***'value'*** - is the *'value'* (text) of an input
+
+A good way to get the *'values'* of your window, is to make a 'Submit' or 'Done' button:
+```python
+if window.get_event() is not None:
+    if window.get_event()['name'] == 'Submit' # or 'Done'
+        values = window.get_values()
+```
+
 ### 3. Widgets
 ### 4. Style
 ### 5. Layout
@@ -97,7 +121,7 @@ if window.get_event() is not None:
 
 *Right now, PyCleanUI is in a state, where I am happy with it and it fits my needs. It is in no ways finished or very well polished though. So maybe in the future I will add new widgets, etc.. If you wan't more features, tell me, or if you want, you can add them yourself.*
 
-### 2. Is there a way to make resizeable windows in PyCleanUI?
+### 3. Is there a way to make resizeable windows in PyCleanUI?
 
 *Sadly, there isn't, and I'm not going to implement that, because it would be way to hard to implement resizable widgets.*
 
