@@ -60,7 +60,8 @@ With this information you should now be able to create your own simple UI applic
 You can find a copy of the *basic_window.py* file in this repository.
 
 <a name="core"></a>
-## 2. Core Principles   [ Back to Startpage ](#begin)
+## 2. Core Principles
+[ Back to Startpage ](#begin)
 ### 1. Event
 
 An event in PyCleanUI is e.g. when a button gets clicked.
