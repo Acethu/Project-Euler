@@ -15,7 +15,10 @@ class Button:
         self.pg_text = self.font.render(self.text, True, STYLE["font"]["color"])
         self.pg_rect = pygame.Rect(self.position[0], self.position[1], self.get_size()[0], self.get_size()[1])
 
-        self.text_pos = (self.position[0] + STYLE["padding"], self.position[1] + STYLE["padding"])
+        if self.padx is not None:
+            self.text_pos = (self.position[0] + self.get_size()[0]/2 - self.pg_text.get_width()/2, self.position[1] + STYLE["padding"])
+        else:
+            self.text_pos = (self.position[0] + STYLE["padding"], self.position[1] + STYLE["padding"])
 
     """ render """
     def render(self):
