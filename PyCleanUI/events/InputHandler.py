@@ -12,6 +12,8 @@ def handle_input(window, widget, event):
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_BACKSPACE:
                 widget.set_text(widget.get_text()[:-1]) # remove last of widget.text
+                if pygame.key.get_pressed()[pygame.K_LSHIFT]:
+                    widget.set_text("")
             else:
                 widget.set_text(widget.get_text() + event.unicode) # add key to widget.text
             widget.render()
