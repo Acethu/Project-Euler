@@ -2,8 +2,9 @@ import pygame
 from PyCleanUI.Style import STYLE
 
 class Button:
-    def __init__(self, text=""):
+    def __init__(self, text="", padx=None):
         self.text = text
+        self.padx = padx
         self.state = "normal"
 
     """ prerender pygame surface """
@@ -41,4 +42,6 @@ class Button:
 
     # return widget px size
     def get_size(self):
+        if self.padx is not None:
+            return (self.padx + self.pg_text.get_width() + STYLE["padding"]*2, self.pg_text.get_height() + STYLE["padding"]*2)
         return (self.pg_text.get_width() + STYLE["padding"]*2, self.pg_text.get_height() + STYLE["padding"]*2)
