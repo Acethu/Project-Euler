@@ -56,6 +56,7 @@ values: [{'index': 3, 'value': 'my_name'}, {'index': 5, 'value': 'my@mail.com'}]
 ***'values'*** - returns a list of dictionaries with an *'index'* and the *'value'* of an input
 
 With this information you should now be able to create your own simple UI applications.
+
 You can find a copy of the *basic_window.py* file in this repository.
 
 <a name="core"></a>
