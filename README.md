@@ -111,12 +111,14 @@ if window.get_event() is not None:
         values = window.get_values()
 ```
 
-### 3. Widgets
-#### 3.1 Text
-#### 3.2 Button
-#### 3.3 Input
-### 4. Style
-### 5. Layout
+### 2. Widgets
+#### 2.1 Text
+#### 2.2 Button
+#### 2.3 Input
+### 3. Style
+The Style in PyCleanUI determines the look of the Window, the Layout and the Widgets.
+You can change the Style in the *Style.py* file, which you can find [here](PyCleanUI/Style.py).
+### 4. Layout
 
 <a name="qna"></a>
 ## 3. Q&A
