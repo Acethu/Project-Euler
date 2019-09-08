@@ -8,8 +8,8 @@ PyCleanUI is a python library inspired by [ PySimpleGUI ](https://github.com/PyS
 ### 2. [ Core Principles ](#2-core-principles)
  - [ Events & Values ](#1-events--values)
  - [ Widgets ](#2-widgets)
- - [ Style ] (#3-style)
- - [ Layout ] (#4-layout)
+ - [ Style ](#3-style)
+ - [ Layout ](#4-layout)
 ### 3. [ Q&A ](#3-qa)
 
 ## 1. Tutorial
