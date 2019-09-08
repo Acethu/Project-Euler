@@ -18,7 +18,7 @@ window = Window("PyCleanUI Tutorial", layout)
 while window.is_running():
     window.update() # always update the window before getting events
     if window.get_event() is not None: # on event
-        print("event:", window.get_event()) # returns info of the button, that has been pressed
+        print("event:", window.get_event()) # returns information about the event, that has been pressed
         print("values:", window.get_values()) # returns values of the inputs
         window.close() # closes window, after 'Done' button is pressed
 
