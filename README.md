@@ -112,9 +112,27 @@ if window.get_event() is not None:
 ```
 
 ### 2. Widgets
+Widgets in PyCleanUI are the elements on screen that you can interact with and see.
 #### 2.1 Text
+The Text Widget displays a string (text) onto the Window.
+
+Parameters:
+
+- text (*string*)
 #### 2.2 Button
+The Button Widget is an interactable Widget, that you can click on. It can also display text.
+
+Parameters:
+
+- text (*string*)
+- padx (*int*) # extra width (in px)
 #### 2.3 Input
+The Input Widget is an interactable Widget, that you input text.
+
+Parameters:
+
+- text (*string*) # text on start
+- width (*int*) # width (in px)
 ### 3. Style
 The Style in PyCleanUI determines the look of the Window, the Layout and the Widgets.
 
