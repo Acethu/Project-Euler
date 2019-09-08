@@ -130,7 +130,7 @@ layout = [
 ]
 ```
 
-You can also pack Widgets horizontally, like this:
+You can also pack Widgets horizontally like this:
 ```python
 layout = [
     [Text("My Text"), Input()],
@@ -138,7 +138,7 @@ layout = [
 ]
 ```
 
-You also have to apply the Layout to your Window like this:
+After creating a Layout, you also have to apply it to your Window:
 ```python
 window = Window("Name", layout)
 ```
