@@ -10,7 +10,7 @@ PyCleanUI is a python library inspired by [ PySimpleGUI ](https://github.com/PyS
 
 <a name="tutorial"></a>
 ## 1. Tutorial
-#### basic window
+#### Basic Window
 ``` python
 # imports
 from PyCleanUI.Window import Window
@@ -57,7 +57,7 @@ values: [{'index': 3, 'value': 'my_name'}, {'index': 5, 'value': 'my@mail.com'}]
 
 With this information you should now be able to create your own simple UI applications.
 
-You can find a copy of the *basic_window.py* file in this repository.
+You can find a copy of the [ basic_window.py ](basic_window.py) file in this repository.
 
 <a name="core"></a>
 ## 2. Core Principles
