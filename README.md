@@ -11,9 +11,9 @@ PyCleanUI is a python library inspired by [ PySimpleGUI ](https://github.com/PyS
  - [ Style ](#3-style)
  - [ Layout ](#4-layout)
 ### 3. [ Q&A ](#3-qa)
- - [ 1. Is PyCleanUI multiplatform, does it work on Mac & Linux too? ]()
- - [ 2. Will PyCleanUI get updated (frequently)? ]()
- - [ 3. Is there a way to make resizeable windows in PyCleanUI? ]()
+ - [ 1. Is PyCleanUI multiplatform, does it work on Mac & Linux too? ](#q1)
+ - [ 2. Will PyCleanUI get updated (frequently)? ](#q2)
+ - [ 3. Is there a way to make resizeable windows in PyCleanUI? ](#q3)
 
 ## 1. Tutorial
 #### Basic Window
@@ -165,15 +165,17 @@ window = Window("Name", layout)
 ## 3. Q&A
 *(questions & answers)*
 
+<a name="q1"></a>
 ### 1. Is PyCleanUI multiplatform, does it work on Mac & Linux too?
 
 *To be honest, I don't know. It should work fine. Just test it out and tell me.*
 
-
+<a name="q2"></a>
 ### 2. Will PyCleanUI get updated (frequently)?
 
 *Right now, PyCleanUI is in a state, where I am happy with it and it fits my needs. It is in no ways finished or very well polished though. So maybe in the future I will add new widgets, etc.. If you wan't more features, tell me, or if you want, you can add them yourself.*
 
+<a name="q3"></a>
 ### 3. Is there a way to make resizeable windows in PyCleanUI?
 
 *Sadly, there isn't, and I'm not going to implement that, because it would be way to hard to implement resizable widgets.*
