@@ -117,7 +117,8 @@ if window.get_event() is not None:
 #### 2.3 Input
 ### 3. Style
 The Style in PyCleanUI determines the look of the Window, the Layout and the Widgets.
-You can change the Style in the *Style.py* file, which you can find [here](PyCleanUI/Style.py).
+
+To see all the different options or to change the Style, you can take a look at the *Style.py* file, which you can find [here](PyCleanUI/Style.py).
 ### 4. Layout
 
 <a name="qna"></a>
