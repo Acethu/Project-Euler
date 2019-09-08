@@ -1,7 +1,7 @@
 # PyCleanUI
 *(version 1.0)*
 
-PyCleanUI is a python library inspired by [ PySimpleGUI ](https://github.com/PySimpleGUI/PySimpleGUI). It is made with pygame from scratch, it is very easy to learn and to understand and has an adjustable clean style.
+PyCleanUI is a python library inspired by [ PySimpleGUI ](https://github.com/PySimpleGUI/PySimpleGUI). PyCleanUI windows are non-native and custom, made with [ pygame ](https://pygame.org). It is very easy to learn and to understand and has an adjustable clean style.
 
 ## Table of contents
 1. [ Tutorial ](#tutorial)
