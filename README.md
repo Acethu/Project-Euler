@@ -47,17 +47,17 @@ window.close() # always close the window properly
 ![alt text](https://i.pinimg.com/originals/3e/f3/04/3ef304635f521b582b6def9ae05b3e3a.png)
 ![alt text](https://i.pinimg.com/originals/73/03/6a/73036a5e793bca42bc894c9c4a7d749b.png)
 
-Now, when you press the 'Done' button, the window should close and the console should log something like this:
+Now, when you press the 'Done' Button, the Window should close and the console should log something like this:
 ``` python
 event: {'index': 6, 'name': 'Done'}
 values: [{'index': 3, 'value': 'my_name'}, {'index': 5, 'value': 'my@mail.com'}]
 ```
 
-***'index'*** - describes the widgets index in the windows layout
+***'index'*** - describes the Widgets index in the Windows Layout
 
-***'name'*** - is the text of the button
+***'name'*** - is the name (text) of the Button
 
-***'values'*** - returns a list of dictionaries with an *'index'* and the *'value'* of an input
+***'values'*** - returns a list of dictionaries with an *'index'* and the *'value'* of an Input
 
 With this information you should now be able to create your own simple UI applications.
 
@@ -67,29 +67,29 @@ You can find a copy of the [ basic_window.py ](basic_window.py) file in this rep
 ## 2. Core Principles
 ### 1. Events & Values
 #### 1.1 Events
-An event in PyCleanUI is e.g. when a button gets clicked.
+An event in PyCleanUI is e.g. when a Button gets clicked.
 
-You can get the current event with:
+You can get the current Event with:
 ``` python
 window.get_event()
 ```
 
-If you were to print out that event, it would look somewhat like this:
+If you were to print out that Event, it would look somewhat like this:
 ```python
 print(window.get_event())
 >>> {'index': 1, 'name': 'Testbutton'}
 ```
 
-Note that *window.get_event()* can return also *None*. So to only get actual events you can do:
+Note that *window.get_event()* can return also *None*. So to only get actual Events you can do:
 ``` python
 if window.get_event() is not None:
     # on actual event
 ```
 
 #### 1.2 Values
-A value in PyCleanUI is e.g. the value (text) of an input.
+A value in PyCleanUI is e.g. the Value (text) of an input.
 
-You can get a list of all values of a window with:
+You can get a list of all Values of a Window with:
 ``` python
 window.get_values()
 ```
@@ -100,11 +100,11 @@ print(window.get_values())
 >>> [{'index': 1, 'value': 'my_name'}, {'index': 2, 'value': 'my@mail.com'}]
 ```
 
-***'index'*** - describes the inputs index in the windows layout
+***'index'*** - describes the Inputs index in the Windows layout
 
 ***'value'*** - is the *'value'* (text) of an input
 
-A good way to get the *'values'* of your window, is to make a 'Submit' or 'Done' button:
+A good way to get the *'values'* of your Window, is to make a 'Submit' or 'Done' Button:
 ```python
 if window.get_event() is not None:
     if window.get_event()['name'] == 'Submit' # or 'Done'
@@ -120,6 +120,28 @@ The Style in PyCleanUI determines the look of the Window, the Layout and the Wid
 
 To see all the different options or to change the Style, you can take a look at the *Style.py* file, which you can find [here](PyCleanUI/Style.py).
 ### 4. Layout
+With a Layout you can decide how the Widgets in your Window are packed.
+
+A Layout in PyCleanUI is a list with the Widgets inside:
+```python
+layout = [
+    Text("My Text"),
+    Button("Done")
+]
+```
+
+You can also pack Widgets horizontally, like this:
+```python
+layout = [
+    [Text("My Text"), Input()],
+    Button("Done")
+]
+```
+
+You also have to apply the Layout to your Window like this:
+```python
+window = Window("Name", layout)
+```
 
 <a name="qna"></a>
 ## 3. Q&A
