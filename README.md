@@ -1,7 +1,7 @@
 # PyCleanUI
 *(version 1.0)*
 
-PyCleanUI is a python library inspired by PySimpleUI. It is made with pygame from scratch, it is very easy to learn and to understand and has an adjustable clean style.
+PyCleanUI is a python library inspired by PySimpleGUI. It is made with pygame from scratch, it is very easy to learn and to understand and has an adjustable clean style.
 
 ## Table of contents
 1. [ Tutorial ](#tutorial)
@@ -127,5 +127,3 @@ if window.get_event() is not None:
 ### 3. Is there a way to make resizeable windows in PyCleanUI?
 
 *Sadly, there isn't, and I'm not going to implement that, because it would be way to hard to implement resizable widgets.*
-
-
