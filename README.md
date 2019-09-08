@@ -11,6 +11,9 @@ PyCleanUI is a python library inspired by [ PySimpleGUI ](https://github.com/PyS
  - [ Style ](#3-style)
  - [ Layout ](#4-layout)
 ### 3. [ Q&A ](#3-qa)
+ - [ 1. Is PyCleanUI multiplatform, does it work on Mac & Linux too? ]()
+ - [ 2. Will PyCleanUI get updated (frequently)? ]()
+ - [ 3. Is there a way to make resizeable windows in PyCleanUI? ]()
 
 ## 1. Tutorial
 #### Basic Window
