@@ -61,8 +61,8 @@ You can find a copy of the *basic_window.py* file in this repository.
 
 <a name="core"></a>
 ## 2. Core Principles
-### 1. Event
-
+### 1. Events & Values
+#### 1.1 Events
 An event in PyCleanUI is e.g. when a button gets clicked.
 
 You can get the current event with:
@@ -82,7 +82,7 @@ if window.get_event() is not None:
     # on actual event
 ```
 
-### 2. Values
+#### 1.2 Values
 A value in PyCleanUI is e.g. the value (text) of an input.
 
 You can get a list of all values of a window with:
@@ -108,6 +108,9 @@ if window.get_event() is not None:
 ```
 
 ### 3. Widgets
+#### 3.1 Text
+#### 3.2 Button
+#### 3.3 Input
 ### 4. Style
 ### 5. Layout
 
