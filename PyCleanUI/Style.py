@@ -1,7 +1,7 @@
 STYLE = {
     "font": {
         "file": "PyCleanUI\Assets\Roboto-Bold.ttf",
-        "size": 24,
+        "size": 16,
         "color": [200, 200, 200],
     },
     "background": {
