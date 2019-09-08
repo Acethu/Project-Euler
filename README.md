@@ -10,9 +10,8 @@ PyCleanUI is a python library inspired by [ PySimpleGUI ](https://github.com/PyS
  - [ Widgets ](# 2.2)
  - [ Style ] (# 2.3)
  - [ Layout ] (# 2.4)
-### 3. [ Q&A ](#qna)
+### 3. [ Q&A ](#3-q&a)
 
-<a name="tutorial"></a>
 ## 1. Tutorial
 #### Basic Window
 ``` python
@@ -63,7 +62,6 @@ With this information you should now be able to create your own simple UI applic
 
 You can find a copy of the [ basic_window.py ](basic_window.py) file in this repository.
 
-<a name="core"></a>
 ## 2. Core Principles
 ### 1. Events & Values
 #### 1.1 Events
@@ -161,7 +159,6 @@ After creating a Layout, you also have to apply it to your Window:
 window = Window("Name", layout)
 ```
 
-<a name="qna"></a>
 ## 3. Q&A
 *(questions & answers)*
 
