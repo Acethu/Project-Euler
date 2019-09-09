@@ -31,7 +31,7 @@ layout = [
     Input("", width=400), # width *optional
     Text("Email:"),
     Input("", width=400),
-    Button("Done")
+    [Button("Done"), Button("Cancel")]
 ]
 # window
 window = Window("PyCleanUI Tutorial", layout)
