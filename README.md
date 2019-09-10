@@ -20,10 +20,13 @@ PyCleanUI is a python library inspired by [ PySimpleGUI ](https://github.com/PyS
 #### Basic Window
 ``` python
 # imports
+# PyCleanUI
 from PyCleanUI.Window import Window
 from PyCleanUI.widgets.Text import Text # text label to display a string of text
 from PyCleanUI.widgets.Button import Button # simple button with text
 from PyCleanUI.widgets.Input import Input # simple input
+# Style
+from Style import style
 # layout
 layout = [
     Text("Fill in these boxes"),
@@ -34,12 +37,12 @@ layout = [
     Button("Done")
 ]
 # window
-window = Window("PyCleanUI Tutorial", layout)
+window = Window("PyCleanUI Tutorial", style, layout)
 # main loop
 while window.is_running():
     window.update() # always update the window before getting events
     if window.get_event() is not None: # on event
-        print("event:", window.get_event()) # returns information about the event
+        print("event:", window.get_event()) # returns information about the event, that has been pressed
         print("values:", window.get_values()) # returns values of the inputs
         window.close() # closes window, after 'Done' button is pressed
 
