@@ -12,6 +12,7 @@ def handle_input(window, widget, event):
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_BACKSPACE:
                 widget.set_text(widget.get_text()[:-1]) # remove last of widget.text
+                widget.show_cursor = True
                 if pygame.key.get_pressed()[pygame.K_LSHIFT]:
                     widget.set_text("")
             else:
