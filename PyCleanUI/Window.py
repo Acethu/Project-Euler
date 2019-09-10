@@ -1,5 +1,6 @@
 import pygame
 import PyCleanUI.LayoutHandler
+import PyCleanUI.UpdateHandler
 import PyCleanUI.events.EventHandler
 import PyCleanUI.assets.Cursors
 import sys
@@ -12,13 +13,11 @@ class Window:
         self.style = style
         self.layout = layout
         self.widgets = []
-        self.frame = 0
         self.fps = 30
         self.running = True
         self.pgInit() # -> class method
         self.pycleanuiInit() # -> class method
 
-    """ pygame initialisation stuff """
     def pgInit(self):
         pygame.init() # init pygame
         # window
@@ -40,9 +39,9 @@ class Window:
         PyCleanUI.LayoutHandler.render(self) # render
         pygame.display.flip() # update window
 
-    """ every tick"""
+    """ every tick """
     def update(self):
-        self.frame += 1
+        self.event = None
         self.custom_event = None
         # check for pygame events
         for event in pygame.event.get():
@@ -52,7 +51,9 @@ class Window:
                 self.custom_event = event
 
             PyCleanUI.events.EventHandler.handle_event(self, event)
-
+            self.event = event
+        # every tick
+        PyCleanUI.UpdateHandler.handle_update(self, self.event)
         self.clock.tick(self.fps) #fps
 
     def is_running(self):
