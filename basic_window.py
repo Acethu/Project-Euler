@@ -1,8 +1,11 @@
 # imports
+# PyCleanUI
 from PyCleanUI.Window import Window
 from PyCleanUI.widgets.Text import Text # text label to display a string of text
 from PyCleanUI.widgets.Button import Button # simple button with text
 from PyCleanUI.widgets.Input import Input # simple input
+# Style
+from Style import style
 # layout
 layout = [
     Text("Fill in these boxes"),
@@ -13,7 +16,7 @@ layout = [
     Button("Done")
 ]
 # window
-window = Window("PyCleanUI Tutorial", layout)
+window = Window("PyCleanUI Tutorial", style, layout)
 # main loop
 while window.is_running():
     window.update() # always update the window before getting events

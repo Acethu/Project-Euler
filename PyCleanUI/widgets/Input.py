@@ -1,8 +1,7 @@
 import pygame
-from PyCleanUI.Style import STYLE
 
 class Input:
-    def __init__(self, text="", width=STYLE["input"]["width"]):
+    def __init__(self, text="", width=None):
         self.text = text
         self.width = width
         self.state = "inactive"
@@ -12,15 +11,18 @@ class Input:
         self.window = window
         self.position = position
 
-        self.pg_text = self.font.render(self.text, True, STYLE["font"]["color"])
+        if self.width == None:
+            self.width = self.window.style["input"]["width"]
+
+        self.pg_text = self.font.render(self.text, True, self.window.style["font"]["color"])
 
         self.pg_rect = pygame.Rect(self.position[0], self.position[1], self.get_size()[0], self.get_size()[1])
 
-        self.text_pos = (self.position[0] + STYLE["padding"], self.position[1] + STYLE["padding"])
+        self.text_pos = (self.position[0] + self.window.style["padding"], self.position[1] + self.window.style["padding"])
 
     """ render """
     def render(self):
-        pygame.draw.rect(self.window.display, STYLE["input"][self.state], self.pg_rect)
+        pygame.draw.rect(self.window.display, self.window.style["input"][self.state], self.pg_rect)
         self.window.display.blit(self.pg_text, self.text_pos)
 
     """ setters """
@@ -35,9 +37,9 @@ class Input:
     # set text (string)
     def set_text(self, text):
         self.text = text
-        if self.font.render(self.text, True, STYLE["font"]["color"]).get_width() > self.get_size()[0] - STYLE["padding"]*2:
+        if self.font.render(self.text, True, self.window.style["font"]["color"]).get_width() > self.get_size()[0] - self.window.style["padding"]*2:
             self.text = self.text[:-1]
-        self.pg_text = self.font.render(self.text, True, STYLE["font"]["color"])
+        self.pg_text = self.font.render(self.text, True, self.window.style["font"]["color"])
 
     """ getters """
     # return pg_rect
@@ -50,7 +52,7 @@ class Input:
 
     # return widget pixel size
     def get_size(self):
-        return (self.width + STYLE["padding"]*2, self.font.get_height() + STYLE["padding"]*2)
+        return (self.width + self.window.style["padding"]*2, self.font.get_height() + self.window.style["padding"]*2)
 
     # return text
     def get_text(self):

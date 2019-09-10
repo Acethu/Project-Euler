@@ -1,5 +1,4 @@
 import pygame
-from PyCleanUI.Style import STYLE
 import PyCleanUI.LayoutHandler
 import PyCleanUI.events.EventHandler
 import PyCleanUI.assets.Cursors
@@ -8,32 +7,37 @@ import sys
 class Window:
 
     """ initialisation """
-    def __init__(self, title, layout):
+    def __init__(self, title, style, layout):
         self.title = title
+        self.style = style
         self.layout = layout
         self.widgets = []
         self.frame = 0
         self.fps = 30
         self.running = True
         self.pgInit() # -> class method
+        self.pycleanuiInit() # -> class method
 
     """ pygame initialisation stuff """
     def pgInit(self):
-        pygame.init()
+        pygame.init() # init pygame
+        # window
         self.display = pygame.display.set_mode((500, 300)) # window
-        # window settings
         pygame.display.set_caption(self.title) # title
-
+        # fps
         self.clock = pygame.time.Clock()
+        # font
+        pygame.font.init() # init pygame.font
+        self.font = pygame.font.Font(self.style["font"]["file"], self.style["font"]["size"])
 
-        pygame.font.init() # allow font usage
-        self.font = pygame.font.Font(STYLE["font"]["file"], STYLE["font"]["size"])
-
+    def pycleanuiInit(self):
+        # cursors
+        PyCleanUI.assets.Cursors.init(self)
         PyCleanUI.assets.Cursors.set_cursor("normal")
-
+        # setup display
         PyCleanUI.LayoutHandler.setup_render(self) # setup the layout
-        self.display.fill(STYLE["background"]["color"]) # background color
-        PyCleanUI.LayoutHandler.render(self) # file
+        self.display.fill(self.style["background"]["color"]) # background color
+        PyCleanUI.LayoutHandler.render(self) # render
         pygame.display.flip() # update window
 
     """ every tick"""

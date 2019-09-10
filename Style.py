@@ -1,4 +1,4 @@
-STYLE = {
+style = {
     "font": {
         "file": "PyCleanUI\Assets\Roboto-Bold.ttf",
         "size": 16,

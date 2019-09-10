@@ -1,16 +1,16 @@
 import pygame
-from PyCleanUI.Style import STYLE
 
 
-# automate this when more cursors are there, for now, i dont care
+# initialize cursors
+def init(window):
+    global normal, button, _input
+    normal = pygame.cursors.compile(window.style["cursors"]["normal"], 'X', '.', 'o')
 
-normal = pygame.cursors.compile(STYLE["cursors"]["normal"], 'X', '.', 'o')
+    button = pygame.cursors.compile(window.style["cursors"]["button"], 'X', '.', 'o')
 
-button = pygame.cursors.compile(STYLE["cursors"]["button"], 'X', '.', 'o')
+    _input = pygame.cursors.compile(window.style["cursors"]["input"], 'X', '.', 'o')
 
-_input = pygame.cursors.compile(STYLE["cursors"]["input"], 'X', '.', 'o')
-
-# set pygame cursor by name -> STYLE
+# set pygame cursor by name -> self.window.style
 def set_cursor(name):
     if name == "normal":
         pygame.mouse.set_cursor((24, 32), (0, 0), *normal)

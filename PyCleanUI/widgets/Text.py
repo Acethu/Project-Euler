@@ -1,14 +1,13 @@
 import pygame
-from PyCleanUI.Style import STYLE
 
 class Text:
     def __init__(self, text=""):
         self.text = text
-        self.color = STYLE["font"]["color"]
 
     """ setup everything to render """
     def setup_render(self, window, position):
         self.window = window
+        self.color = window.style["font"]["color"]
         self.position = position
         self.pg_text = self.font.render(self.text, True, self.color)
 

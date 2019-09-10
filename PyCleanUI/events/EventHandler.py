@@ -1,7 +1,7 @@
 import pygame
 import pygame.locals
 
-from PyCleanUI.Style import STYLE
+
 import PyCleanUI.assets.Cursors
 
 import PyCleanUI.events.ButtonHandler

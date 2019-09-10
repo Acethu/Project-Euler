@@ -1,10 +1,9 @@
 import pygame
 import PyCleanUI
-from PyCleanUI.Style import STYLE
 
 """ create pygame Renders, determine position of widgets """
 def setup_render(window):
-    padding = STYLE["padding"]
+    padding = window.style["padding"]
     nx = padding
     ny = padding
 
