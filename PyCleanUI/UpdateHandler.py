@@ -18,7 +18,11 @@ def _handle_input_delete(window, event):
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_BACKSPACE:
                 del_time = 0
-    else:
+            else:
+                event = None
+        else:
+            event = None
+    if event is None:
         if 'del_rate' in globals():
             if del_time % del_rate == 0:
                 if pygame.key.get_pressed()[pygame.K_BACKSPACE]:
