@@ -20,7 +20,8 @@ style = {
     },
     "cursors": {
         "text": {
-            "width": 2
+            "width": 2,
+            "color": [95, 95, 95]
         },
         "normal": ( # size 24x32
             "X                       ",

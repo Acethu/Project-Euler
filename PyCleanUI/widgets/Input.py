@@ -27,7 +27,7 @@ class Input:
         self.window.display.blit(self.pg_text, self.text_pos)
 
         if self.show_cursor == True:
-            pygame.draw.rect(self.window.display, (255,255,255), [self.text_pos[0] + self.pg_text.get_width(), self.text_pos[1], self.window.style["cursors"]["text"]["width"], self.pg_text.get_height()])
+            pygame.draw.rect(self.window.display, self.window.style["cursors"]["text"]["color"], [self.text_pos[0] + self.pg_text.get_width(), self.text_pos[1], self.window.style["cursors"]["text"]["width"], self.pg_text.get_height()])
 
     def toggle_cursor(self):
         if self.show_cursor == True:
