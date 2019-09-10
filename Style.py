@@ -19,6 +19,9 @@ style = {
         "inactive": [60, 60, 60],
     },
     "cursors": {
+        "text": {
+            "width": 2
+        },
         "normal": ( # size 24x32
             "X                       ",
             "XX                      ",

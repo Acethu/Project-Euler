@@ -27,6 +27,7 @@ def handle_input(window, widget, event):
                     w.set_state("inactive")
                     w.render()
             widget.set_state("active")
+            widget.show_cursor = True
             widget.render()
             pygame.display.flip()
     # mouse not over
@@ -40,5 +41,6 @@ def handle_input(window, widget, event):
             PyCleanUI.assets.Cursors.set_cursor("normal")
         if event.type == pygame.MOUSEBUTTONDOWN:
             widget.set_state(state="inactive")
+            widget.show_cursor = False
             widget.render()
             pygame.display.flip()
