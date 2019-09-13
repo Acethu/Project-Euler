@@ -13,7 +13,7 @@ layout = [
     Input("", width=400), # width *optional
     Text("Email:"),
     Input("", width=400),
-    Button("Done", width=100)
+    [Button("Done", width=240), Button("Cancel", width=150)]
 ]
 # window
 window = Window("PyCleanUI Tutorial", style, layout)
