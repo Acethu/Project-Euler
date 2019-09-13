@@ -68,7 +68,7 @@ class Input:
 
     # return widget pixel size
     def get_size(self):
-        return (self.width + self.window.style["padding"]*2, self.font.get_height() + self.window.style["padding"]*2)
+        return (self.width, self.font.get_height() + self.window.style["padding"]*2)
 
     # return text
     def get_text(self):

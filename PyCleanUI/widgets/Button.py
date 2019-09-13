@@ -1,9 +1,9 @@
 import pygame
 
 class Button:
-    def __init__(self, text="", padx=None):
+    def __init__(self, text="", width=None):
         self.text = text
-        self.padx = padx
+        self.width = width
         self.state = "normal"
 
     """ prerender pygame surface """
@@ -11,13 +11,15 @@ class Button:
         self.window = window
         self.position = position
 
-        if self.padx == None:
-            self.padx = self.window.style["button"]["padx"]
-
         self.pg_text = self.font.render(self.text, True, self.window.style["font"]["color"])
+
+        if self.width == None:
+            self.width = self.get_size()[0]
+            
         self.pg_rect = pygame.Rect(self.position[0], self.position[1], self.get_size()[0], self.get_size()[1])
 
-        if self.padx is not 0:
+
+        if self.width:
             self.text_pos = (self.position[0] + self.get_size()[0]/2 - self.pg_text.get_width()/2, self.position[1] + self.window.style["padding"])
         else:
             self.text_pos = (self.position[0] + self.window.style["padding"], self.position[1] + self.window.style["padding"])
@@ -47,6 +49,6 @@ class Button:
 
     # return widget px size
     def get_size(self):
-        if self.padx is not 0:
-            return (self.padx + self.pg_text.get_width() + self.window.style["padding"]*2, self.pg_text.get_height() + self.window.style["padding"]*2)
+        if self.width:
+            return (self.width, self.pg_text.get_height() + self.window.style["padding"]*2)
         return (self.pg_text.get_width() + self.window.style["padding"]*2, self.pg_text.get_height() + self.window.style["padding"]*2)
