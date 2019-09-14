@@ -44,7 +44,8 @@ while window.is_running():
     if window.get_event() is not None: # on event
         print("event:", window.get_event()) # returns information about the event, that has been pressed
         print("values:", window.get_values()) # returns values of the inputs
-        window.close() # closes window, after 'Done' button is pressed
+        if window.get_event()["name"] == "Cancel":
+            window.close() # closes window, when 'Cancel' button is pressed
 
 window.close() # always close the window properly
 ```
