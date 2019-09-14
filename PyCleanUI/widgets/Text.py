@@ -1,8 +1,9 @@
 import pygame
 
 class Text:
-    def __init__(self, text=""):
+    def __init__(self, text="", width=None):
         self.text = text
+        self.width = width
 
     """ setup everything to render """
     def setup_render(self, window, position):
@@ -23,6 +24,9 @@ class Text:
     """ getters """
     # return widget px size
     def get_size(self):
+        if self.width:
+            if self.width > self.pg_text.get_width():
+                return [self.width, self.pg_text.get_height()]
         return self.pg_text.get_size()
 
     # return render -> pygame surface
