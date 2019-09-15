@@ -1,6 +1,6 @@
 import pygame
 import PyCleanUI.LayoutHandler
-import PyCleanUI.UpdateHandler
+import PyCleanUI.events.UpdateHandler
 import PyCleanUI.events.EventHandler
 import PyCleanUI.assets.Cursors
 import sys
@@ -59,7 +59,7 @@ class Window:
             PyCleanUI.events.EventHandler.handle_event(self, event)
             self.event = event
         # every tick
-        PyCleanUI.UpdateHandler.handle_update(self, self.event)
+        PyCleanUI.events.UpdateHandler.handle_update(self, self.event)
         self.clock.tick(self.fps) #fps
 
     def is_running(self):
