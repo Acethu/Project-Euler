@@ -12,7 +12,7 @@ import PyCleanUI.widgets.Input
 
 """ test for visual changes to be made due to an event """
 def handle_event(window, event):
-    index = 0
+    index = -1
     for widget in window.widgets:
         index += 1
         # handle event on 'Button'
@@ -26,12 +26,12 @@ def handle_event(window, event):
 """ get source of custom event """
 def get_source(window, event):
     if event != None:
-        return {"index": event.custom_type, "name": window.widgets[event.custom_type-1].text}
+        return {"index": event.custom_type, "name": window.widgets[event.custom_type].text}
 
 """ get values """
 def get_values(window):
     values = []
-    index = 0
+    index = -1
 
     for widget in window.widgets:
         index += 1

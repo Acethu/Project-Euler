@@ -56,6 +56,8 @@ class Input:
         if self.font.render(self.text, True, self.window.style["font"]["color"]).get_width() > self.get_size()[0] - self.window.style["padding"]*2:
             self.text = self.text[:-1]
         self.pg_text = self.font.render(self.text, True, self.window.style["font"]["color"])
+        self.render()
+        pygame.display.flip()
 
     """ getters """
     # return pg_rect
