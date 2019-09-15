@@ -26,7 +26,7 @@ class Window:
         self.display = pygame.display.set_mode((500, 300)) # window
         pygame.display.set_caption(self.title) # title
         if not self.icon_file: # set icon file
-            self.icon_file = "PyCleanUI\\icon.jpg"
+            self.icon_file = "PyCleanUI\\assets\\icon.jpg"
         self.icon = pygame.image.load(self.icon_file)
         pygame.display.set_icon(self.icon) # set icon
         # fps
